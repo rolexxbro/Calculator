@@ -52,14 +52,21 @@ public:
     {
         std::cout << user_name << " " << user_surname << std::endl;
     }
+    User(std::string user_name, std::string user_surname): user_name{user_name}, user_surname{user_surname} {}
+    std::string getName() const {return user_name;}
+    std::string getSurname() const {return user_surname;}
+    void setNameSurname(std::string in_name, std::string in_surname)
+    {
+        in_name = user_name;
+        in_surname  = user_surname;
+    }
+
 };
 
-struct TextFile
+std::ostream& operator << (std::ostream &os, const User &person)
 {
-    TextFile(std::string file_name, std::string file_surname) : file_name{ file_name }, file_surname{ file_surname } {}
-    std::string file_name;
-    std::string file_surname;
-};
+    return os << person.getName() << " " << person.getSurname();
+}
 
 int main()
 {
@@ -81,13 +88,13 @@ int main()
     User user(name, surname);
     user.Print_user();
 
-    std::vector<TextFile> text{TextFile{name, surname}};
-    std::ofstream out("print_info.txt");
-    if(out.is_open())
+    std::vector<User> people = { User{name, surname} };
+    std::ofstream out("people.txt");
+    if (out.is_open())
     {
-        for(const TextFile& texts : text)
+        for (const User& person: people)
         {
-            out << texts.file_name << " " << texts.file_surname;
+            out << person << std::endl;
         }
     }
     out.close();
