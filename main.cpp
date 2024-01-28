@@ -43,7 +43,7 @@ private:
     std::string user_name;
     std::string user_surname;
 public:
-    User(std::string void_name, std::string void_surname)
+/*    User(std::string void_name, std::string void_surname)
     {
         user_name = void_name;
         user_surname = void_surname;
@@ -51,7 +51,7 @@ public:
     void Print_user()
     {
         std::cout << user_name << " " << user_surname << std::endl;
-    }
+    } */
     User(std::string name, std::string surname): user_name{name}, user_surname{surname} {}
     std::string getName() const {return user_name;}
     std::string getSurname() const {return user_surname;}
@@ -86,7 +86,7 @@ int main()
     std::cout << "Enter Surname: ";
     std::cin >> surname;
     User user(name, surname);
-    user.Print_user();
+    //user.Print_user();
 
     std::vector<User> people = { User{name, surname} };
     std::ofstream out("people.txt");
@@ -99,5 +99,5 @@ int main()
     }
     out.close();
 
-    return 0;
+    system("pause");
 }
