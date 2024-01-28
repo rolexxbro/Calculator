@@ -52,7 +52,7 @@ public:
     {
         std::cout << user_name << " " << user_surname << std::endl;
     }
-    User(std::string user_name, std::string user_surname): user_name{user_name}, user_surname{user_surname} {}
+    User(std::string name, std::string surname): user_name{name}, user_surname{surname} {}
     std::string getName() const {return user_name;}
     std::string getSurname() const {return user_surname;}
     void setNameSurname(std::string in_name, std::string in_surname)

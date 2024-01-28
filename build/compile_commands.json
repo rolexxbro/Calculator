@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/ProjectCpp/Calc/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\Calculator.dir\\main.cpp.obj -c D:\\ProjectCpp\\Calc\\main.cpp",
+  "file": "D:/ProjectCpp/Calc/main.cpp",
+  "output": "CMakeFiles/Calculator.dir/main.cpp.obj"
+}
+]
